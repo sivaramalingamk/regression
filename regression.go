@@ -184,9 +184,9 @@ func (r *Regression) Run() error {
 	}
 
 	// Output the regression results
-	r.coeff = make(map[int]float64, numOfvars)
+	r.Coef = make(map[int]float64, numOfvars)
 	for i, val := range c {
-		r.coeff[i] = val
+		r.Coef[i] = val
 		if i == 0 {
 			r.Formula = fmt.Sprintf("Predicted = %.2f", val)
 		} else {
@@ -202,10 +202,10 @@ func (r *Regression) Run() error {
 
 // Return the calulated coefficient for variable i
 func (r *Regression) Coeff(i int) float64 {
-	if len(r.coeff) == 0 {
+	if len(r.Coef) == 0 {
 		return 0
 	}
-	return r.coeff[i]
+	return r.Coef[i]
 }
 
 func (r *Regression) calcPredicted() string {
