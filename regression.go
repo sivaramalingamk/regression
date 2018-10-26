@@ -3,11 +3,10 @@ package regression
 import (
 	"errors"
 	"fmt"
+	"gonum.org/v1/gonum/mat"
 	"math"
 	"strconv"
 	"strings"
-
-	"gonum.org/v1/gonum/mat"
 )
 
 var (
@@ -19,7 +18,7 @@ var (
 type Regression struct {
 	names             describe
 	data              []*dataPoint
-	coeff             map[int]float64
+	Coef              map[int]float64
 	R2                float64
 	Varianceobserved  float64
 	VariancePredicted float64

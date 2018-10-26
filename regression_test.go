@@ -39,7 +39,7 @@ func TestRun(t *testing.T) {
 	fmt.Printf("Regression:\n%s\n", r)
 
 	// All vars are known to positively correlate with the murder rate
-	for i, c := range r.coeff {
+	for i, c := range r.Coef {
 		if i == 0 {
 			// This is the offset and not a coeff
 			continue
@@ -79,7 +79,7 @@ func TestCrossApply(t *testing.T) {
 		t.Error("Name incorrect")
 	}
 
-	for i, c := range r.coeff {
+	for i, c := range r.Coef {
 		if i == 0 {
 			// This is the offset and not a coeff
 			continue
