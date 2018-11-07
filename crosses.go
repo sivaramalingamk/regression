@@ -29,14 +29,14 @@ func (c *functionalCross) ExtendNames(input map[int]string, initialSize int) int
 	return len(c.boundVars)
 }
 
-// Feature cross based on computing the power of an input.
-func PowCross(i int, power float64) featureCross {
+// Feature cross based on computing the log of an input.
+func LogCross(i int) featureCross {
 	return &functionalCross{
-		functionName: "^" + strconv.FormatFloat(power, 'f', -1, 64),
+		functionName: "log",
 		boundVars:    []int{i},
 		crossFn: func(vars []float64) []float64 {
 
-			return []float64{math.Pow(vars[i], power)}
+			return []float64{math.Log(vars[i])}
 		},
 	}
 }
